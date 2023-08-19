@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int falcon = 0;
 
-	if (format == NULL || (format[0] == '%' && (!format[1] || (format[1] == ' ' && !format[2]))))
+	if (format == NULL || (format[0] == '%' && !format[1]))
 		return (-1);
 	va_start(ap, format);
 	while (*format)
