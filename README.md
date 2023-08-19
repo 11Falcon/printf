@@ -1,1 +1,2 @@
-This project is done by Soufiane Falcon . It is an implementation of printf function from scratch
+Hello and Welcome in this project where we're going to implement our own printf function from scratch. 
+I'm falcon soufiane ash
