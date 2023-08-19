@@ -1,65 +1,26 @@
-#include "main.h"
-#include <unistd.h>
-#include <stdlib.h>
+#include <limits.h>
 #include <stdio.h>
-#include <stdarg.h>
-int _printf(const char *format, ...)
+#include "main.h"
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
 {
-	va_list ap;
-	int falcon = 0;
-
-	if (format == NULL)
-		return (0);
-	va_start(ap, format);
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			format++;
-			if (*format == 'c')
-			{
-				int c = va_arg(ap, int);
-				write(1, &c, 1);
-				falcon++;
-			}
-			else if (*format == 's')
-			{
-				char *s = va_arg(ap, char*);
-				if (s == NULL)
-					s = "(nil)";
-				while (*s)
-				{
-					write(1, s, 1);
-					s++;
-					falcon++;
-				}
-			}
-			else if (*format == '%')
-			{
-				write(1, &format, 1);
-				falcon++;
-			}
-		}
-		else 
-		{
-			write(1, &format, 1);
-			falcon++;
-		}
-		format++;
-	}
-
-
-
-	va_end(ap);
-	return (falcon);
-}
-int main(int argc, char *argv[])
-{
-	int i;
-
-	for (i = 1; i<argc; i++)
-	{
-		_printf("%s\n\n", argv[i]);
-	}
-	return (0);
+	int len, len2;
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    if (len == len2)
+	    printf("true");
+    else
+	    printf("false");
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+    len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+    return (0);
 }
