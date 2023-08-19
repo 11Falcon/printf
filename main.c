@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i<argc; i++)
 	{
-		_printf("%s\n", argv[i]);
+		_printf("%s\n\n", argv[i]);
 	}
 	return (0);
 }
