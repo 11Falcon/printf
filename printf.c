@@ -28,13 +28,12 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 				print_per(&falcon);
 		}
-		else 
+		else
 		{
 			write(1, format, 1);
 			falcon++;
 		}
 		format++;
-		
 	}
 	va_end(ap);
 	return (falcon);
