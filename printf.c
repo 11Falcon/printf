@@ -22,30 +22,11 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == 'c')
-			{
-				int c = va_arg(ap, int);
-
-				write(1, &c, 1);
-				falcon++;
-			}
+				print_char(ap, &falcon);
 			else if (*format == 's')
-			{
-				char *s = va_arg(ap, char*);
-
-				if (s == NULL)
-					s = "(nil)";
-				while (*s)
-				{
-					write(1, s, 1);
-					s++;
-					falcon++;
-				}
-			}
+				print_s(ap, &falcon);
 			else if (*format == '%')
-			{
-				write(1, format, 1);
-				falcon++;
-			}
+				print_per(&falcon);
 		}
 		else 
 		{
@@ -53,6 +34,7 @@ int _printf(const char *format, ...)
 			falcon++;
 		}
 		format++;
+		
 	}
 	va_end(ap);
 	return (falcon);
