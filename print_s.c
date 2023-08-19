@@ -12,7 +12,7 @@ void print_s(va_list ap, int *falcon)
 	char *s = va_arg(ap, char*);
 
 	if (s == NULL)
-		s = "(nil)";
+		s = "(null)";
 	while (*s)
 	{
 		write(1, s, 1);
