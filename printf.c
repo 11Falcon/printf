@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int falcon = 0;
 
 	if (format == NULL)
-		return (0);
+		exit(98);
 	va_start(ap, format);
 	while (*format)
 	{
