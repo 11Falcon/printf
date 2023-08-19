@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+/**
+ * _printf - Freedom printf function
+ * @format: input
+ * Return: int
+ */
 int _printf(const char *format, ...)
 {
 	va_list ap;
@@ -19,12 +24,14 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				int c = va_arg(ap, int);
+
 				write(1, &c, 1);
 				falcon++;
 			}
 			else if (*format == 's')
 			{
 				char *s = va_arg(ap, char*);
+
 				if (s == NULL)
 					s = "(nil)";
 				while (*s)
@@ -47,7 +54,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(ap);
 	return (falcon);
 }
