@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int falcon = 0;
 
 	if (format == NULL)
-		return (-1);
+		return (NULL);
 	va_start(ap, format);
 	while (*format)
 	{
