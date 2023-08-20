@@ -27,6 +27,8 @@ int _printf(const char *format, ...)
 				print_s(ap, &falcon);
 			else if (*format == '%')
 				print_per(&falcon);
+			else if (*format == ' ')
+				format++;
 		}
 		else
 		{
