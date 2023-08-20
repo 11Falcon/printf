@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 				print_per(&falcon);
 			else if (*format == ' ')
 				format++;
-			else if (*format == 'd')
+			else if (*format == 'd' || *format == 'i')
 			{
 				print_d(ap, falcon);
 			}

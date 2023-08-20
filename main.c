@@ -9,25 +9,22 @@
  */
 int main(void)
 {
-
 	int len;
     int len2;
-    char *str =NULL;
-    len = printf("%s",str);
-    len2 = printf("%s",str);
-    printf("%d     %d \n",len, len2);
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    _printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
         _printf("Character:[%c]\n", 'H');
     printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
+        _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
         len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
-    _printf("\n");
-    printf("%d\n",-11);
-    _printf("%d\nfalcon\n",-22);
-    _printf("%d\n\n",-156512312312);
-    return(len + len2);
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+	return (0);
 }
