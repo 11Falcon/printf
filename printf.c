@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 				format++;
 			else if (*format == 'd' || *format == 'i')
 			{
-				print_d(ap, falcon);
+				falcon = print_d(ap, falcon);
 			}
 		}
 		else

@@ -1,5 +1,12 @@
 #include <unistd.h>
-void sou(int d_d, int falcon)
+#include "main.h"
+/**
+ * sou - entry code
+ * @d_d: input
+ * @falcon: input
+ * Return: int
+ */
+int sou(int d_d, int falcon)
 {
 	int count = 0;
 	int d = d_d;
@@ -11,8 +18,8 @@ void sou(int d_d, int falcon)
 		d_d = -d_d;
 		write(1, &o_i, 1);
 		falcon++;
-		sou(d_d, falcon);
-		return;
+		falcon = sou(d_d, falcon);
+		return (falcon);
 	}
 	while (d_d > 0)
 	{
@@ -29,4 +36,5 @@ void sou(int d_d, int falcon)
 		d /= 10;
 		count--;
 	}
+	return (falcon);
 }

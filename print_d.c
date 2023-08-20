@@ -5,8 +5,9 @@
  * print_d - treating %d
  * @ap: input
  * @falcon: input
+ * Return: int
  */
-void print_d(va_list ap, int falcon)
+int print_d(va_list ap, int falcon)
 {
 	int d = va_arg(ap, int);
 	int d_d = d;
@@ -19,5 +20,6 @@ void print_d(va_list ap, int falcon)
 		falcon++;
 	}
 	else
-		sou(d_d, falcon);
+		falcon = sou(d_d, falcon);
+	return (falcon);
 }
