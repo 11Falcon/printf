@@ -12,7 +12,10 @@ int _printf(const char *format, ...)
 	int falcon = 0;
 
 	if (format == NULL || (format[0] == '%' && !format[1]))
+	{
+		write(1,"(null)",6);
 		return (-1);
+	}
 	if ((format[0] == '%' && format[1] == ' ') && (!format[2]))
 		return (-1);
 	va_start(ap, format);
