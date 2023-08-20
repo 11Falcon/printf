@@ -11,12 +11,11 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int falcon = 0;
 
-	if (format == NULL || (format[0] == '%' && !format[1]))
+	if ((format == NULL || (format[0] == '%' && !format[1])) || ((format[0] == '%' && format[1] == ' ') && (!format[2])))
 	{
+		write(1, "(null)", 6);
 		return (-1);
 	}
-	if ((format[0] == '%' && format[1] == ' ') && (!format[2]))
-		return (-1);
 	va_start(ap, format);
 	while (*format)
 	{
@@ -31,10 +30,7 @@ int _printf(const char *format, ...)
 				print_per(&falcon);
 		}
 		else
-		{
-			write(1, format, 1);
-			falcon++;
-		}
+			print_norm(*format, &falcon);
 		format++;
 	}
 	va_end(ap);
