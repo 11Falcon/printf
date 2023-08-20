@@ -28,12 +28,19 @@ int sou(int d_d, int falcon)
 	}
 	while (count)
 	{
-		int o_o = d % 10;
-		char o_i = '0' + o_o;
+		int i = 0;
+		int pw = 1;
+		int o_o;
+		char o_i;
+
+		for (i = 1; i < count; i++)
+			pw *= 10;
+		o_o = d / pw;
+		d = d - (o_o * pw);
+		o_i = '0' + o_o;
 
 		write(1, &o_i, 1);
 		falcon++;
-		d /= 10;
 		count--;
 	}
 	return (falcon);
