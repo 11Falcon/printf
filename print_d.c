@@ -14,7 +14,8 @@ void print_d(va_list ap, int falcon)
 	if (d == 0)
 	{
 		char o_i = '0' + d;
-		write(1, &o_i,1);
+
+		write(1, &o_i, 1);
 		falcon++;
 	}
 	else
