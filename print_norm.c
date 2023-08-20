@@ -4,7 +4,8 @@
  * @format: input
  * @falcon: input
  */
-void print_norm(char format,int *falcon){
+void print_norm(char format, int *falcon)
+{
 	write(1, &format, 1);
 	(*falcon)++;
 }
