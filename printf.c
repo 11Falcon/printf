@@ -33,6 +33,13 @@ int _printf(const char *format, ...)
 			{
 				falcon = print_d(ap, falcon);
 			}
+			else
+			{
+				char ca = '%';
+				write(1, &ca, 1);
+				write(1, format, 1);
+				falcon = falcon + 2;
+			}
 		}
 		else
 		{
