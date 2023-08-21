@@ -30,16 +30,9 @@ int _printf(const char *format, ...)
 			else if (*format == ' ')
 				format++;
 			else if (*format == 'd' || *format == 'i')
-			{
 				falcon = print_d(ap, falcon);
-			}
 			else
-			{
-				char ca = '%';
-				write(1, &ca, 1);
-				write(1, format, 1);
-				falcon = falcon + 2;
-			}
+				print_undef(*format, &falcon);
 		}
 		else
 		{

@@ -7,4 +7,5 @@ void print_s(va_list ap, int *falcon);
 void print_per(int *falcon);
 int sou(int d_d, int falcon);
 int print_d(va_list ap, int falcon);
+void print_undef(char s, int *falcon);
 #endif
