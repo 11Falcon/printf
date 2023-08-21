@@ -12,6 +12,10 @@ int print_d(va_list ap, int falcon)
 	int d = va_arg(ap, int);
 	int d_d = d;
 
+	if (d == NULL)
+	{
+		return (-1);
+	}
 	if (d == 0)
 	{
 		char o_i = '0' + d;
