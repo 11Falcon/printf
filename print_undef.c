@@ -12,4 +12,5 @@ void print_undef(char s, int *falcon)
 	write(1, &ca, 1);
 	write(1, &s, 1);
 	(*falcon)++;
+	(*falcon)++;
 }
