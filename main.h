@@ -8,4 +8,5 @@ void print_per(int *falcon);
 int sou(long int d_d, int falcon);
 int print_d(va_list ap, int falcon);
 void print_undef(char s, int *falcon);
+int print_b(va_list ap, int falcon);
 #endif
