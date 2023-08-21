@@ -23,13 +23,19 @@ int main(void)
         if(len == len2)
             printf("\nFreedom\n");
     printf("\n%d\n%d\n",len, len2);
-    len =_printf("Negative:[%d]\n", -762534);
-    len2 = printf("Negative:[%d]\n", -762534);
+    len =_printf("Negative:[%d]\n", -762534477);
+    len2 = printf("Negative:[%d]\n", -762534477);
         if(len == len2)
             printf("\nFreedom\n");
     printf("\n%d\n%d\n",len, len2);
     _printf("Unsigned:[%u]\n", ui);
     printf("Unsigned:[%u]\n", ui);
+    len =_printf("Positive:[%d]\n", 762534477);
+    len2 = printf("Positive:[%d]\n", 762534477);
+    if ( len == len2)
+	    printf("\nTrue\n");
+    else
+	    printf("False\n");
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
