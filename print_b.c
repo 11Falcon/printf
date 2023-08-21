@@ -17,7 +17,7 @@ int print_b(va_list ap, int falcon)
 	if (d < 0)
 	{
 		d = -d;
-		positive = 1;
+		positive = 0;
 	}
 	for (i = 31; i >= 0; i--)
 	{
