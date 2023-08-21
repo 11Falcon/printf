@@ -11,20 +11,38 @@ int print_b(va_list ap, int falcon)
 {
 	int result[32];
 	long int d = va_arg(ap, long int);
-	long int i;
+	int positive, i;
 	long int d_im = d;
 
+	if (d < 0)
+	{
+		d = -d;
+		positive = 1;
+	}
 	for (i = 31; i >= 0; i--)
 	{
 		long int div = 1 << i;
 
-		if ((d_im / div) >= 1)
+		if (positive == 1)
 		{
-			d_im -= div;
-			result[i] = 1;
+			if ((d_im / div) >= 1)
+			{
+				d_im -= div;
+				result[i] = 1;
+			}
+			else
+				result[i] = 0;
 		}
 		else
-			result[i] = 0;
+		{
+			if ((d_im / div) >= 1)
+			{
+				d_im -= div;
+				result[i] = 0;
+			}
+			else
+				result[i] = 1;
+		}
 	}
 	i = 31;
 	while ((i >= 0) && result[i] == 0)
