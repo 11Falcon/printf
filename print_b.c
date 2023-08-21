@@ -16,9 +16,11 @@ int print_b(va_list ap, int falcon)
 
 	if (d < 0)
 	{
-		d = -d;
+		d_im = -d_im;
 		positive = 0;
 	}
+	else
+		positive = 1;
 	for (i = 31; i >= 0; i--)
 	{
 		long int div = 1 << i;

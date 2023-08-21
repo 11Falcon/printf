@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    _printf("%b\n", -1);
+    _printf("%b\n", -112);
     return (0);
 }
