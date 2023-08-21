@@ -6,10 +6,10 @@
  * @falcon: input
  * Return: int
  */
-int sou(int d_d, int falcon)
+int sou(long int d_d, int falcon)
 {
 	int count = 0;
-	int d = d_d;
+	long int d = d_d;
 
 	if (d_d < 0)
 	{
@@ -29,7 +29,7 @@ int sou(int d_d, int falcon)
 	while (count)
 	{
 		int i = 0;
-		int pw = 1;
+		long int pw = 1;
 		int o_o;
 		char o_i;
 

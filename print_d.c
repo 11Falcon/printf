@@ -9,8 +9,8 @@
  */
 int print_d(va_list ap, int falcon)
 {
-	int d = va_arg(ap, int);
-	int d_d = d;
+	long int d = va_arg(ap, int);
+	long int d_d = d;
 
 	if (ap == NULL)
 		return (-1);
