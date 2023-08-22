@@ -10,17 +10,10 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	int *a = (int *)calloc(32, sizeof(int)), i, d_im = va_arg(ap, int);
+	unsigned int *a = (unsigned int *)calloc(32, sizeof(unsigned int)), d_im = va_arg(ap, unsigned int);
 	char c;
+	int i;
 
-	if (d_im < 0)
-	{
-		c = '%';
-		write(1, &c, 1);
-		c = 'b';
-		write(1, &c, 1);
-		return (falcon + 2);
-	}
 	for (i = 31; i >= 0; i--)
 	{
 		int div = 1 << i;
