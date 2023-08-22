@@ -11,4 +11,5 @@ void print_undef(char s, int *falcon);
 int print_b(va_list ap, int falcon);
 int print_u(va_list ap, int falcon);
 int print_o(va_list ap, int falcon);
+int print_glob(const char *format, va_list ap, int falcon);
 #endif

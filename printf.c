@@ -21,24 +21,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'c')
-				print_char(ap, &falcon);
-			else if (*format == 's')
-				print_s(ap, &falcon);
-			else if (*format == '%')
-				print_per(&falcon);
-			else if (*format == ' ')
-				format++;
-			else if (*format == 'd' || *format == 'i')
-				falcon = print_d(ap, falcon);
-			else if (*format == 'u')
-				falcon = print_u(ap, falcon);
-			else if (*format == 'o' && 0)
-				falcon = print_o(ap, falcon);
-			else if (*format == 'b' && 0)
-				falcon = print_b(ap, falcon);
-			else
-				print_undef(*format, &falcon);
+			falcon = print_glob(format, ap, falcon);
 		}
 		else
 		{

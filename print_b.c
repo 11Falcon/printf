@@ -10,7 +10,8 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	unsigned int *a = (unsigned int *)calloc(32, sizeof(unsigned int)), d_im = va_arg(ap, unsigned int);
+	unsigned int *a = (unsigned int *)calloc(32, sizeof(unsigned int));
+	unsigned int d_im = va_arg(ap, unsigned int);
 	char c;
 	int i;
 
