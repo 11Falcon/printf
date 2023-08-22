@@ -10,7 +10,7 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	int *a = (int *)calloc(32, sizeof(int)), i, d_im = va_arg(ap, long int);
+	int *a = (int *)calloc(32, sizeof(int)), i, d_im = va_arg(ap, int);
 	char c;
 
 	if (d_im < 0)
