@@ -31,6 +31,10 @@ int _printf(const char *format, ...)
 				format++;
 			else if (*format == 'd' || *format == 'i')
 				falcon = print_d(ap, falcon);
+			else if (*format == 'u')
+				falcon = print_u(ap, falcon);
+			else if (*format == 'o')
+				falcon = print_o(ap, falcon);
 			else if (*format == 'b')
 				falcon = print_b(ap, falcon);
 			else
