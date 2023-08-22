@@ -1,3 +1,4 @@
+#include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
 /**
@@ -9,8 +10,8 @@
 int print_b(va_list ap, int falcon)
 {
 	int result[32];
-	long int d_im = va_arg(ap, long int);
-	long int i;
+	int d_im = va_arg(ap, long int);
+	int i;
 	char c;
 
 	if (d_im < 0)
@@ -24,7 +25,7 @@ int print_b(va_list ap, int falcon)
 	}
 	for (i = 31; i >= 0; i--)
 	{
-		long int div = 1 << i;
+		int div = 1 << i;
 
 		if ((d_im / div) >= 1)
 		{
