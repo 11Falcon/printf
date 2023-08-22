@@ -1,6 +1,7 @@
 #include "main.h"
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdlib.h>
 /**
  * print_b - binary printing
  * @ap: input
@@ -9,7 +10,7 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	int result[32], i, d_im = va_arg(ap, long int);
+	int *a, i, d_im = va_arg(ap, long int);
 	char c;
 
 	if (d_im < 0)
@@ -20,6 +21,7 @@ int print_b(va_list ap, int falcon)
 		write(1, &c, 1);
 		return (falcon + 2);
 	}
+	a = (int*)malloc(32 * sizeof(int));
 	for (i = 31; i >= 0; i--)
 	{
 		int div = 1 << i;
@@ -27,13 +29,13 @@ int print_b(va_list ap, int falcon)
 		if ((d_im / div) >= 1)
 		{
 			d_im -= div;
-			result[i] = 1;
+			a[i] = 1;
 		}
 		else
-			result[i] = 0;
+			a[i] = 0;
 	}
 	i = 31;
-	for (i = 31; (i >= 0) && result[i] == 0;)
+	for (i = 31; (i >= 0) && a[i] == 0;)
 		i--;
 	if (i < 0)
 	{
@@ -44,9 +46,10 @@ int print_b(va_list ap, int falcon)
 	else
 		for (; i >= 0; i--)
 		{
-			c = result[i] + '0';
+			c = a[i] + '0';
 			write(1, &c, 1);
 			falcon++;
 		}
+	free(a);
 	return (falcon);
 }
