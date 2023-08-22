@@ -10,14 +10,12 @@
 int print_b(va_list ap, int falcon)
 {
 	int result[32];
-	long int d = va_arg(ap, long int);
+	long int d_im = va_arg(ap, long int);
 	long int i;
-	long int d_im = d;
 	char c;
 
 	if (d < 0)
 	{
-		printf("Negative");
 		c = '%';
 		write(1, &c, 1);
 		c = 'b';
@@ -25,7 +23,6 @@ int print_b(va_list ap, int falcon)
 		falcon += 2;
 		return (falcon);
 	}
-	printf("Positive");
 	for (i = 31; i >= 0; i--)
 	{
 		long int div = 1 << i;
@@ -44,7 +41,7 @@ int print_b(va_list ap, int falcon)
 		i--;
 	if (i < 0)
 	{
-		char c = '0';
+		c = '0';
 		write(1, &c, 1);
 		falcon++;
 	}
@@ -52,7 +49,7 @@ int print_b(va_list ap, int falcon)
 	{
 		for (; i >= 0; i--)
 		{
-			char c = result[i] + '0';
+			c = result[i] + '0';
 			write(1, &c, 1);
 			falcon++;
 		}
