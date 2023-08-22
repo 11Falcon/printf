@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 /**
@@ -29,7 +28,6 @@ int print_b(va_list ap, int falcon)
 
 		if ((d_im / div) >= 1)
 		{
-			printf("p");
 			d_im -= div;
 			result[i] = 1;
 		}
