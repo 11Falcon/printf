@@ -9,11 +9,10 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	int result[32], i, d = va_arg(ap, long int);
-	unsigned int d_im = va_arg(ap, long int);
+	int result[32], i, d_im = va_arg(ap, long int);
 	char c;
 
-	if (d < 0)
+	if (d_im < 0)
 	{
 		c = '%';
 		write(1, &c, 1);
