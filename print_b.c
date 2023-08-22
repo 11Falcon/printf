@@ -9,9 +9,7 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	int result[32];
-	int d_im = va_arg(ap, long int);
-	int i;
+	int result[32], i,  d_im = va_arg(ap, long int);
 	char c;
 
 	if (d_im < 0)
@@ -20,8 +18,7 @@ int print_b(va_list ap, int falcon)
 		write(1, &c, 1);
 		c = 'b';
 		write(1, &c, 1);
-		falcon += 2;
-		return (falcon);
+		return (falcon + 2);
 	}
 	for (i = 31; i >= 0; i--)
 	{
@@ -36,7 +33,7 @@ int print_b(va_list ap, int falcon)
 			result[i] = 0;
 	}
 	i = 31;
-	while ((i >= 0) && result[i] == 0)
+	for (i = 31; (i >= 0) && result[i] == 0;)
 		i--;
 	if (i < 0)
 	{
@@ -45,13 +42,11 @@ int print_b(va_list ap, int falcon)
 		falcon++;
 	}
 	else
-	{
 		for (; i >= 0; i--)
 		{
 			c = result[i] + '0';
 			write(1, &c, 1);
 			falcon++;
 		}
-	}
 	return (falcon);
 }
