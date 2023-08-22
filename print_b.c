@@ -10,7 +10,7 @@
  */
 int print_b(va_list ap, int falcon)
 {
-	int *a, i, d_im = va_arg(ap, long int);
+	int *a = (int *)calloc(32, sizeof(int)), i, d_im = va_arg(ap, long int);
 	char c;
 
 	if (d_im < 0)
@@ -21,7 +21,6 @@ int print_b(va_list ap, int falcon)
 		write(1, &c, 1);
 		return (falcon + 2);
 	}
-	a = (int*)malloc(32 * sizeof(int));
 	for (i = 31; i >= 0; i--)
 	{
 		int div = 1 << i;
@@ -31,8 +30,6 @@ int print_b(va_list ap, int falcon)
 			d_im -= div;
 			a[i] = 1;
 		}
-		else
-			a[i] = 0;
 	}
 	i = 31;
 	for (i = 31; (i >= 0) && a[i] == 0;)
