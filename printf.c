@@ -33,9 +33,9 @@ int _printf(const char *format, ...)
 				falcon = print_d(ap, falcon);
 			else if (*format == 'u')
 				falcon = print_u(ap, falcon);
-			else if (*format == 'o')
+			else if (*format == 'o' && 0)
 				falcon = print_o(ap, falcon);
-			else if (*format == 'b')
+			else if (*format == 'b' && 0)
 				falcon = print_b(ap, falcon);
 			else
 				print_undef(*format, &falcon);
