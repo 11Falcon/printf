@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * print_o - Entry code
  * @ap: input
@@ -10,23 +11,33 @@
  */
 int print_o(va_list ap, int falcon)
 {
-        unsigned int *a = (unsigned int *)calloc(32, sizeof(unsigned int)), d_im = va_arg(ap, unsigned int);
+        unsigned int *a = (unsigned int *)calloc(15, sizeof(unsigned int));
+       	unsigned int d_im = va_arg(ap, unsigned int), temp = d_im;
         char c;
-        int i;
+        int i, num = 0;
 
-        for (i = 31; i >= 0; i--)
+	while (temp >0)
+	{
+		temp /= 8;
+		num++;
+	}
+	for (i = num - 1; i >= 0; i--)
         {
-                int div = 7 << i;
-
+                unsigned int div = 1;
+		int s = i;
+		while (s > 0)
+		{
+			s--;
+			div *= 8;
+		}
                 if ((d_im / div) >= 1)
                 {
-                        unsigned int rest = d_im - div;
-			d_im -= div;
+                        unsigned int rest = d_im / div;
                         a[i] = rest;
+			d_im -= rest * div;
                 }
         }
-        i = 31;
-        for (i = 31; (i >= 0) && a[i] == 0;)
+        for (i = num - 1; (i >= 0) && a[i] == 0;)
                 i--;
         if (i < 0)
         {
