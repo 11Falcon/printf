@@ -14,7 +14,7 @@ int print_b(va_list ap, int falcon)
 	long int i;
 	char c;
 
-	if (d < 0)
+	if (d_im < 0)
 	{
 		c = '%';
 		write(1, &c, 1);
