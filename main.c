@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	_printf("%b\n", -98);
-	_printf("%b\n", -98);
+	if (_printf("%b\n", 98) == _printf("%b\n", 98))
+		printf("true");
 	return (0);
 }
