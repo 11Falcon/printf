@@ -13,4 +13,5 @@ int print_u(va_list ap, int falcon);
 int print_o(va_list ap, int falcon);
 int print_glob(const char *format, va_list ap, int falcon);
 int print_h(va_list ap, int falcon);
+int print_r(va_list ap, int falcon);
 #endif

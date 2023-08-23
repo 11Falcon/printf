@@ -24,5 +24,7 @@ int print_glob(const char *format, va_list ap, int falcon)
 		falcon = print_o(ap, falcon);
 	else if (*format == 'b')
 		falcon = print_b(ap, falcon);
+	else if (*format == 'r')
+		falcon = print_r(ap, falcon);
 	return (falcon);
 }
