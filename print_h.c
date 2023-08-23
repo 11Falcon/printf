@@ -9,7 +9,7 @@
  * @falcon
  * Return: int
  */
-int print_o(va_list ap, int falcon)
+int print_h(va_list ap, int falcon)
 {
         unsigned int *a = (unsigned int *)calloc(15, sizeof(unsigned int));
        	unsigned int d_im = va_arg(ap, unsigned int), temp = d_im;
